@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types';
 
 const HEIGHT = 23;
-const COLOR = '#e52b50';
+const COLOR = '#219653';
 const TEXT_COLOR = 'black';
 const DISABLE_TEXT_COLOR = 'grey'
 

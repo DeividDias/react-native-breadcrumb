@@ -1,5 +1,5 @@
 {
-  "name": "react-native-breadcrumb",
+  "name": "react-native-customizable-breadcrumb",
   "version": "1.0.1",
   "description": "A node module for creating breadcrumbs in both ios and android react-native projects.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csath/react-native-breadcrumb.git"
+    "url": "git+https://github.com/DeividDias/react-native-customizable-breadcrumb"
   },
   "keywords": [
     "react-native",
@@ -16,10 +16,10 @@
     "ios",
     "breadcrumb"
   ],
-  "author": "Chanaka Athurugiriya <chanakaathurugiriya@gmail.com>",
+  "author": "Deivid Dias",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/csath/react-native-breadcrumb/issues"
+    "url": "https://github.com/DeividDias/react-native-customizable-breadcrumb/issues"
   },
-  "homepage": "https://github.com/csath/react-native-breadcrumb#readme"
+  "homepage": "https://github.com/DeividDias/react-native-customizable-breadcrumb#readme"
 }
