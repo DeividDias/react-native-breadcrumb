@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 import Colors from '../../../util/Tema';
 
 const HEIGHT = 23;
-const COLOR = Colors.primaryLight;
 const TEXT_COLOR = 'black';
 const DISABLE_TEXT_COLOR = 'grey'
 
@@ -22,7 +21,7 @@ const Crumb = ({ isCrumbActive, index, text, firstCrumbStyle, lastCrumbStyle, cr
       style={[
         styles.crumbStyle,
         crumbStyle,
-        isCrumbActive ? [styles.activeCrumbStyle, activeTabStyle] : {},
+        isCrumbActive ? [styles.activeCrumbStyle, activeTabStyle, { backgroundColor: Colors.primaryLight, borderColor: Colors.primaryLight }] : {},
         firstCrumbStyle,
         lastCrumbStyle,
         { height }]}
@@ -31,9 +30,10 @@ const Crumb = ({ isCrumbActive, index, text, firstCrumbStyle, lastCrumbStyle, cr
     >
       {Platform.OS === 'android' && !firstCrumbStyle ? <View style={{ width: height / 2.0, height, backgroundColor: 'transparent' }} /> : null}
       <View style={styles.crumbContainer}>
-        {isCrumbActive && !firstCrumbStyle ? <View style={[styles.leftTriangleContainer, styles.triangleTail, triangleTailStyle, { left: - height / 2 }, Platform.OS === 'android' ? { top: -2 } : {}]} /> : null}
+        {isCrumbActive && !firstCrumbStyle ? <View style={[styles.leftTriangleContainer, styles.triangleTail, triangleTailStyle, { left: - height / 2, borderTopColor: Colors.primaryLight, borderBottomColor: Colors.primaryLight, }, Platform.OS === 'android' ? { top: -2 } : {}]} /> : null}
         <Text
           style={[
+            { color: Colors.primaryLight, },
             styles.crumbTextStyle,
             crumbTextStyle,
             isCrumbActive ? [styles.activeCrumbTextStyle, activeCrumbTextStyle] : {}]}
@@ -42,7 +42,7 @@ const Crumb = ({ isCrumbActive, index, text, firstCrumbStyle, lastCrumbStyle, cr
         >
           {'  ' + text + ' '}
         </Text>
-        {isCrumbActive && !lastCrumbStyle ? <View style={[styles.rightTriangleContainer, styles.triangleHead, triangleHeadStyle, { right: - height / 2 }, Platform.OS === 'android' ? { top: -2 } : {}]} /> : null}
+        {isCrumbActive && !lastCrumbStyle ? <View style={[styles.rightTriangleContainer, styles.triangleHead, triangleHeadStyle, { right: - height / 2, borderColor: Colors.primaryLight }, Platform.OS === 'android' ? { top: -2 } : {}]} /> : null}
       </View>
       {Platform.OS === 'android' && !lastCrumbStyle ? <View style={{ width: height / 2.0 , height, backgroundColor: 'white' }} /> : null}
     </TouchableOpacity>
@@ -79,7 +79,7 @@ const Breadcrumb = ({ flowDepth, entities, borderRadius, crumbsContainerStyle, c
               firstCrumbStyle={index === 0 ? firstCrumbStyle : null}
               lastCrumbStyle={index === entities.length - 1 ? lastCrumbStyle : null}
               crumbStyle={crumbStyle}
-              activeCrumbStyle={activeCrumbStyle}
+              activeCrumbStyle={[activeCrumbStyle]}
               crumbTextStyle={[crumbTextStyle, index < flowDepth ? { color: TEXT_COLOR } : { color: DISABLE_TEXT_COLOR }]}
               activeCrumbTextStyle={activeCrumbTextStyle}
               height={height ? height : HEIGHT}
@@ -122,12 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     height: HEIGHT
   },
-  activeCrumbStyle: {
-    backgroundColor: COLOR,
-    borderColor: COLOR
-  },
   crumbTextStyle: {
-    color: COLOR,
     fontSize: 12
   },
   activeCrumbTextStyle: {
@@ -155,7 +150,6 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderBottomWidth: HEIGHT / 2.0,
     borderLeftWidth: HEIGHT / 2.0,
-    borderColor: COLOR,
     borderTopColor: 'transparent',
     borderBottomColor: 'transparent',
   },
@@ -165,8 +159,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: HEIGHT / 2.0,
     borderLeftWidth: HEIGHT / 2.0,
     borderColor: 'transparent',
-    borderTopColor: COLOR,
-    borderBottomColor: COLOR,
   }
 });
 
