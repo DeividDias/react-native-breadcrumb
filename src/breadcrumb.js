@@ -8,9 +8,10 @@ import {
   Platform
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Colors from '../../../util/Tema';
 
 const HEIGHT = 23;
-const COLOR = '#219653';
+const COLOR = Colors.primaryLight;
 const TEXT_COLOR = 'black';
 const DISABLE_TEXT_COLOR = 'grey'
 
